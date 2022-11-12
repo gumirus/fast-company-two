@@ -11,6 +11,19 @@ const TableHeader = ({ onSort, selectedSort, columns }) => {
       onSort({ path: item, order: "asc" });
     }
   };
+
+  const switchUpDown = (columnPath) => {
+    if (selectedSort.path !== columnPath) return "";
+
+    if (selectedSort.order === "asc") {
+      return <i className="bi bi-caret-up-fill"></i>;
+    }
+
+    if (selectedSort.order === "desc") {
+      return <i className="bi bi-caret-down-fill"></i>;
+    }
+  };
+
   return (
     <thead>
       <tr>
@@ -25,6 +38,7 @@ const TableHeader = ({ onSort, selectedSort, columns }) => {
             {...{ role: columns[column].path && "button" }}
             scope="col">
             {columns[column].name}
+            {switchUpDown(columns[column].path)}
           </th>
         ))}
         {/* <th scope="col">Качества</th>
