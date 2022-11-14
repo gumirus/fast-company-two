@@ -36,7 +36,8 @@ const TableHeader = ({ onSort, selectedSort, columns }) => {
                 : undefined
             }
             {...{ role: columns[column].path && "button" }}
-            scope="col">
+            scope="col"
+          >
             {columns[column].name}
             {switchUpDown(columns[column].path)}
           </th>
