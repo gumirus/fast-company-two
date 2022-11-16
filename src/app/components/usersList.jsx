@@ -101,7 +101,7 @@ const UsersList = () => {
       </div>
     );
   }
-  return "loading";
+  return <h3>Loading...</h3>;
 };
 UsersList.propTypes = {
   users: PropTypes.array,
